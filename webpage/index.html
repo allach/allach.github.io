@@ -1,0 +1,83 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <title>COVID OUTBREAK ANIMATION</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,900;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+
+    <!-- JL: Extensions for Scrollmagic -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.2.1/dist/jBox.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.2.1/dist/jBox.all.min.css" rel="stylesheet">
+
+    <!-- Extensions for google charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- Script for D3 charts -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Headline Container (this format is required for scrollmagic) -->
+    <div id="h1Container">
+        <h1 class="unselectable h1" id="h1">COVID-19:<br>AUSWIRKUNGEN<br>AUF DAS<br>GASTGEWERBE<br>IM JAHR 2020</h1>
+        <h1 class="scrollTip" id="scrollTip">SCROLL</h1>
+    </div>
+
+    <!--contentContainer holds all the content page elements (needed for scrollmagic)-->
+    <div class="contentContainer" id=contentContainer>
+        <!--Title of the content page-->
+        <p class="titleofchartline">Gastronomie und Beherbergung in Deutschland 2020: Umsatz und Anzahl der Beschäftigten im Vergleich zum Vorjahr gemessen in Prozent</p><br>
+
+        <!--SVG that draws the Multiline-Chart-->
+        <svg id="chart"  width="1300" height="370"></svg>
+
+        <!--Gantt-Chart Container-->
+        <div id="ganttContainer"></div>
+
+        <!--mycheckboxes1: The Checkboxes + Text + Colour indicator for BeherberungUmsatz & BeherbergungBeschäftigte-->
+        <div class="mycheckboxes1">
+            <div>
+                <div class="box" style="background: #8525FD"></div>
+                <label for="BeherbergungUmsatz" class="fixwidth"> Beherbergung Umsatz</label>
+                <input type="checkbox" id="BeherbergungUmsatz" name="BeherbergungUmsatz" checked=true>
+            </div>
+            <div>
+                <div class="box" style="background: #866FA2"></div>
+                <label for="Beherbergungbeschäftigte" class="fixwidth"> Beherbergung Beschäftigte</label>
+                <input type="checkbox" id="Beherbergungbeschäftigte" name="Beherbergungbeschäftigte" checked=true>
+            </div>
+        </div>
+
+        <!--mycheckboxes1: The Checkboxes + Text + Colour indicator for GastronomieUmsatz & GastronomieBeschäftigte-->
+        <div class="mycheckboxes2">
+            <div>
+                <div class="box" style="background: #007DFA"></div>
+                <label for="GastronomieUmsatz" class="fixwidth"> Gastronomie Umsatz</label>
+                <input type="checkbox" id="GastronomieUmsatz" name="GastronomieUmsatz" checked=true>
+            </div>
+            <div>
+                <div class="box" style="background: #4E7C91"></div>
+                <label for="Gastronomiebeschäftigte" class="fixwidth"> Gastronomie Beschäftigte</label>
+                <input type="checkbox" id="Gastronomiebeschäftigte" name="Gastronomiebeschäftigte" checked=true>
+            </div>
+        </div>
+
+        <p class="sources">Quellen: <a class= "link" href="https://de.wikipedia.org/wiki/COVID-19-Pandemie_in_Bayern" target="_blank">Maßnahmen</a>, <a class= "link" href="https://www-genesis.destatis.de/genesis//online?operation=table&code=45213-0004&bypass=true&levelindex=0&levelid=1611755543354#abreadcrumb" target="_blank">Umsatz</a>, <a class= "link" href="https://www-genesis.destatis.de/genesis//online?operation=table&code=45213-0002&bypass=true&levelindex=0&levelid=1611755543354#abreadcrumb" target="_blank">Beschäftigte</a></p>
+    </div>
+
+    <!--Link to the .js file-->
+    <script src="script.js"></script>
+</body>
+</html>
